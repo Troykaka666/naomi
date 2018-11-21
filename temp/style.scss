@@ -1,5 +1,9 @@
 @import "normalize";
-$mainBlue: blue;
-h1 {
-  color: $mainBlue;
-}
+@import "modules/_variables.scss";
+@import "modules/_reusables.scss";
+
+@import "modules/_mixins.scss";
+
+@import "modules/_base.scss";
+
+@import "modules/layouts/_navigation.scss";

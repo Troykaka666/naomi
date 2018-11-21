@@ -301,5 +301,203 @@ template {
 [hidden] {
   display: none; }
 
-h1 {
-  color: blue; }
+.lineartext-pink {
+  color: transparent;
+  background-image: -webkit-gradient(linear, left top, right top, from(#edd6f8), to(#ffa4b3));
+  background-image: linear-gradient(to right, #edd6f8, #ffa4b3);
+  -webkit-background-clip: text;
+          background-clip: text; }
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
+
+html {
+  font-size: 10px; }
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Open Sans", sans-serif; }
+
+.navigation {
+  text-align: center;
+  position: relative;
+  height: 800px; }
+  .navigation__button {
+    background-color: rgba(255, 255, 255, 0.527);
+    height: 5rem;
+    width: 5rem;
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 2000;
+    -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer; }
+  .navigation__background {
+    background-image: -webkit-gradient(linear, left bottom, right top, from(rgba(43, 40, 50, 0.8)), color-stop(45%, rgba(83, 86, 99, 0.8)), color-stop(60%, rgba(69, 77, 91, 0.6)));
+    background-image: linear-gradient(bottom left, rgba(43, 40, 50, 0.8) 0%, rgba(83, 86, 99, 0.8) 45%, rgba(69, 77, 91, 0.6) 60%);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
+    z-index: 500;
+    opacity: 0;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s; }
+  .navigation__checkbox {
+    display: none; }
+  .navigation__nav {
+    background-color: rgba(120, 124, 123, 0.76);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100vw;
+    opacity: 0;
+    z-index: 1000;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s; }
+  .navigation__heart {
+    font-size: 3rem;
+    color: pink; }
+    @media (min-width: 600px) {
+      .navigation__heart {
+        font-size: 8rem; } }
+  .navigation__list {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -30%);
+            transform: translate(-50%, -30%);
+    list-style: none;
+    text-align: center;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s; }
+  .navigation__item {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.5rem;
+    border-bottom: 1px solid white;
+    margin-bottom: 0.5rem; }
+    @media (min-width: 600px) {
+      .navigation__item {
+        font-size: 5rem;
+        font-weight: 700;
+        letter-spacing: 0.5rem;
+        border-bottom: 1px solid white;
+        margin-bottom: 1rem; } }
+  .navigation__link:link, .navigation__link:visited {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #84dfc0 20%);
+    background-size: 230%; }
+  .navigation__link:hover, .navigation__link:active {
+    -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+    background-position: 100%;
+    -webkit-transform: translateY(1rem) scale(1.1);
+            transform: translateY(1rem) scale(1.1); }
+  .navigation__footer {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    text-align: center;
+    letter-spacing: 0.5rem; }
+    .navigation__footer__title {
+      font-family: "Caveat", cursive;
+      font-size: 7rem;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+      margin: 1rem 0 0 0;
+      padding: 1rem 0 2rem 0; }
+    .navigation__footer__subtitle {
+      font-size: 2rem; }
+    .navigation__footer__list {
+      list-style: none; }
+    .navigation__footer__item {
+      font-size: 3rem;
+      display: inline-block;
+      padding: 0.8rem; }
+    .navigation__footer__link {
+      color: pink;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s; }
+      .navigation__footer__link--ins:hover {
+        color: #ec41ec; }
+      .navigation__footer__link--weixin:hover {
+        color: greenyellow; }
+      .navigation__footer__link--weibo:hover {
+        color: #a14646; }
+  .navigation__icon {
+    position: relative;
+    margin-top: 2.5rem;
+    -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1); }
+    .navigation__icon, .navigation__icon::before, .navigation__icon::after {
+      height: 3px;
+      width: 3rem;
+      display: inline-block;
+      background-color: black; }
+    .navigation__icon::before, .navigation__icon::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s; }
+    .navigation__icon::before {
+      top: -0.8rem; }
+    .navigation__icon::after {
+      top: 0.8rem; }
+  .navigation__button:hover .navigation__icon::before {
+    top: -1rem; }
+  .navigation__button:hover .navigation__icon::after {
+    top: 1rem; }
+  .navigation__checkbox:checked ~ .navigation__nav {
+    width: 40rem;
+    opacity: 1; }
+  .navigation__checkbox:checked + .navigation__button .navigation__icon {
+    background-color: transparent; }
+  .navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+  .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  .navigation__checkbox:checked ~ .navigation__background {
+    opacity: 1; }

@@ -1,0 +1,9 @@
+.lineartext-pink {
+  color: transparent;
+  background-image: linear-gradient(
+    to right,
+    rgb(237, 214, 248),
+    rgb(255, 164, 179)
+  );
+  background-clip: text;
+}
