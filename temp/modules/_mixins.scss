@@ -17,13 +17,13 @@ ORDER: Base + typography > general layout + grid > page layout > components
 1em = 16px
 */
 @mixin atSmall {
-  @media (min-width: 600px) {
+  @media (min-width: 660px) {
     @content;
   }
 }
 
 @mixin atMedium {
-  @media (min-width: 800px) {
+  @media (min-width: 860px) {
     @content;
   }
 }

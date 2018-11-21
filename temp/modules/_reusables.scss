@@ -2,8 +2,26 @@
   color: transparent;
   background-image: linear-gradient(
     to right,
-    rgb(237, 214, 248),
-    rgb(255, 164, 179)
+    rgb(220, 175, 243),
+    rgb(231, 155, 168)
   );
   background-clip: text;
+}
+
+.customeScrollbar {
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: $shadow;
+    border-radius: 1rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(237, 214, 248),
+      rgb(255, 164, 179)
+    );
+    border-radius: 1rem;
+  }
 }
