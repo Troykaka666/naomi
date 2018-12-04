@@ -71,6 +71,7 @@
     z-index: 500;
     opacity: 0;
     transition: all 0.5s;
+    visibility: hidden;
   }
 
   //sidebar
@@ -80,7 +81,8 @@
     top: 0;
     left: 0;
     height: 100vh;
-    width: 0;
+    width: 100%;
+    visibility: hidden;
     opacity: 0;
     z-index: 1000;
     transition: all 0.5s cubic-bezier(0.78, 0.36, 0.54, 1.15);
@@ -230,6 +232,7 @@
     top: 1rem;
   }
   &__checkbox:checked ~ &__nav {
+    visibility: visible;
     width: 20rem;
     opacity: 1;
     display: block;
@@ -253,5 +256,6 @@
   }
   &__checkbox:checked ~ &__background {
     opacity: 1;
+    visibility: visible;
   }
 }
