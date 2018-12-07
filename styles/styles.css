@@ -320,15 +320,15 @@ ORDER: Base + typography > general layout + grid > page layout > components
 */
 .lineartext-pink-dark {
   color: transparent;
-  background-image: -webkit-gradient(linear, left top, right top, from(#c793dd), to(#b84a5d));
-  background-image: linear-gradient(to right, #c793dd, #b84a5d);
+  background-image: -webkit-gradient(linear, left top, right top, from(#b841eb), to(#ff607b));
+  background-image: linear-gradient(to right, #b841eb, #ff607b);
   -webkit-background-clip: text;
           background-clip: text; }
 
 .lineartext-pink {
   color: transparent;
-  background-image: -webkit-gradient(linear, left top, right top, from(#dcaff3), to(#e79ba8));
-  background-image: linear-gradient(to right, #dcaff3, #e79ba8);
+  background-image: -webkit-gradient(linear, left top, right top, from(#c463f1), to(#f051a0));
+  background-image: linear-gradient(to right, #c463f1, #f051a0);
   -webkit-background-clip: text;
           background-clip: text; }
 
@@ -354,6 +354,10 @@ ORDER: Base + typography > general layout + grid > page layout > components
     .container-1 {
       margin: 3rem auto 0 auto; } }
 
+.container-2 {
+  margin: 0;
+  padding: 2rem 4rem; }
+
 *,
 *::after,
 *::before {
@@ -363,7 +367,18 @@ ORDER: Base + typography > general layout + grid > page layout > components
           box-sizing: inherit; }
 
 html {
-  font-size: 10px; }
+  font-size: 10px;
+  overflow-y: hidden; }
+  html ::-webkit-scrollbar {
+    width: 0.5rem; }
+  html ::-webkit-scrollbar-track {
+    -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+    border-radius: 1rem; }
+  html ::-webkit-scrollbar-thumb {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#edd6f8), to(#ffa4b3));
+    background-image: linear-gradient(to bottom, #edd6f8, #ffa4b3);
+    border-radius: 1rem; }
 
 body {
   -webkit-box-sizing: border-box;
@@ -372,6 +387,32 @@ body {
   background-color: aliceblue;
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(187, 187, 189, 0.452)), to(rgba(253, 186, 186, 0.514)));
   background-image: linear-gradient(to right, rgba(187, 187, 189, 0.452), rgba(253, 186, 186, 0.514)); }
+
+.parallax {
+  margin-top: 0rem;
+  padding: 10rem 2rem 0 2rem;
+  background-color: rgba(245, 245, 245, 0.925);
+  background-image: url("../../../img/girl1.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  height: 30rem;
+  -webkit-clip-path: polygon(50% 5%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0);
+          clip-path: polygon(50% 5%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0); }
+  @media (min-width: 860px) {
+    .parallax {
+      height: 60rem;
+      -webkit-clip-path: polygon(50% 20%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0);
+              clip-path: polygon(50% 20%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0); } }
+  .parallax__overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(159, 208, 214, 0.527);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; }
 
 .navigation {
   text-align: center;
@@ -451,7 +492,7 @@ body {
     overflow-x: hidden; }
   .navigation__heart {
     font-size: 2.5rem;
-    color: pink;
+    color: #d66dc5;
     margin-bottom: 2.3rem; }
     @media (min-width: 660px) {
       .navigation__heart {
@@ -544,7 +585,7 @@ body {
         .navigation__footer__item {
           font-size: 3rem; } }
     .navigation__footer__link {
-      color: pink;
+      color: #d66dc5;
       -webkit-transition: all 0.5s;
       transition: all 0.5s; }
       .navigation__footer__link--ins:hover {
@@ -623,85 +664,92 @@ body {
 .box2 {
   width: 100%;
   height: 1000px;
-  background-color: white;
   float: left;
+  background-color: rgba(252, 245, 245, 0.856);
   -webkit-transition: width 0.3 ease;
   transition: width 0.3 ease;
-  margin-top: 50rem; }
+  margin-top: 0rem;
+  overflow-y: unset;
+  overflow-x: hidden; }
   @media (min-width: 860px) {
     .box2 {
-      margin-top: 0; } }
+      margin-top: 0;
+      overflow-y: scroll;
+      overflow-x: hidden; } }
   @media (min-width: 1010px) {
     .box2 {
       width: 60%;
       -webkit-box-shadow: -5px 14px 61px -2px rgba(0, 0, 0, 0.75);
       box-shadow: -5px 14px 61px -2px rgba(0, 0, 0, 0.75); } }
-  .box2__header {
-    z-index: 9; }
-    @media (min-width: 860px) {
-      .box2__header {
-        margin-top: -5rem; } }
-    .box2__header__title {
-      font-size: 13rem;
-      font-weight: 500; }
-      @media (min-width: 860px) {
-        .box2__header__title {
-          font-size: 20rem; } }
-    .box2__header__subti {
+  @media (min-width: 860px) {
+    .box2__header {
       margin-top: -5rem;
-      font-size: 2.5rem;
-      font-weight: 300;
-      margin-bottom: 0;
-      padding-bottom: 0; }
-      @media (min-width: 860px) {
-        .box2__header__subti {
-          margin-top: -15rem;
-          font-size: 5rem; } }
-    .box2__header__quote {
-      font-size: 6rem; }
-    .box2__header__likeme {
-      margin-top: -3rem;
-      padding-top: 5rem; }
+      padding-bottom: 1rem; } }
+  .box2__header__title {
+    font-size: 10rem;
+    font-weight: 500;
+    margin-bottom: 0rem; }
+    @media (min-width: 860px) {
+      .box2__header__title {
+        font-size: 20rem;
+        margin-bottom: 5rem; } }
+  .box2__header__subti {
+    font-size: 2.2rem;
+    font-weight: 300;
+    margin-bottom: 0;
+    padding-bottom: 0; }
+    @media (min-width: 860px) {
+      .box2__header__subti {
+        margin-top: -15rem;
+        font-size: 5rem; } }
+  .box2__header__quote {
+    font-size: 3rem; }
+    @media (min-width: 860px) {
+      .box2__header__quote {
+        font-size: 5rem; } }
+  .box2__header__likeme {
+    margin-top: 1rem;
+    padding-top: 5rem; }
+  .box2__header__heart {
+    position: relative;
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out; }
     .box2__header__heart {
-      position: relative;
+      font-size: 5rem;
+      color: #d66dc5; }
+    .box2__header__heart::before {
+      content: "";
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background-color: plum;
+      border-radius: 50%;
+      -webkit-clip-path: polygon(49% 40%, 73% 26%, 92% 40%, 95% 62%, 82% 77%, 50% 100%, 23% 80%, 3% 60%, 6% 38%, 25% 26%);
+      clip-path: polygon(49% 40%, 73% 26%, 92% 40%, 95% 62%, 82% 77%, 50% 100%, 23% 80%, 3% 60%, 6% 38%, 25% 26%);
       -webkit-transition: all 0.6s ease-in-out;
       transition: all 0.6s ease-in-out; }
-      .box2__header__heart {
-        font-size: 5rem;
-        color: #f3a5b2; }
-      .box2__header__heart::before {
-        content: "";
-        position: absolute;
-        top: 20%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        background-color: plum;
-        border-radius: 50%;
-        -webkit-clip-path: polygon(49% 40%, 73% 26%, 92% 40%, 95% 62%, 82% 77%, 50% 100%, 23% 80%, 3% 60%, 6% 38%, 25% 26%);
-        clip-path: polygon(49% 40%, 73% 26%, 92% 40%, 95% 62%, 82% 77%, 50% 100%, 23% 80%, 3% 60%, 6% 38%, 25% 26%);
-        -webkit-transition: all 0.6s ease-in-out;
-        transition: all 0.6s ease-in-out; }
-      .box2__header__heart:hover {
-        color: plum; }
-      .box2__header__heart:hover::before {
-        -webkit-transform: translate(-50%, -50%) scale(2.5);
-                transform: translate(-50%, -50%) scale(2.5);
-        -webkit-animation: slowlygone 0.5s cubic-bezier(0.74, 1.23, 0.92, 1.33);
-                animation: slowlygone 0.5s cubic-bezier(0.74, 1.23, 0.92, 1.33); }
-      .box2__header__heart:active {
-        color: #d61e1e; }
-      .box2__header__heart-like {
-        margin-top: -3rem;
-        font-size: 2rem;
-        margin: 0; }
-        .box2__header__heart-like span {
-          font-size: 3.3rem;
-          padding-right: 0.5rem;
-          letter-spacing: 1px; }
+    .box2__header__heart:hover {
+      color: plum; }
+    .box2__header__heart:hover::before {
+      -webkit-transform: translate(-50%, -50%) scale(2.5);
+              transform: translate(-50%, -50%) scale(2.5);
+      -webkit-animation: slowlygone 0.5s cubic-bezier(0.74, 1.23, 0.92, 1.33);
+              animation: slowlygone 0.5s cubic-bezier(0.74, 1.23, 0.92, 1.33); }
+    .box2__header__heart:active {
+      color: #d61e1e; }
+    .box2__header__heart-like {
+      margin-top: 0rem;
+      font-size: 2rem;
+      font-family: "Allerta Stencil", sans-serif;
+      padding-bottom: 2re .box2__header__heart-like span;
+        padding-bottom-font-size: 3.3rem;
+        padding-bottom-padding-right: 0.5rem;
+        padding-bottom-letter-spacing: 1px; }
 
 @-webkit-keyframes slowlygone {
   0% {
@@ -726,3 +774,56 @@ body {
     opacity: 0.5; }
   100% {
     opacity: 0; } }
+
+.music {
+  height: 20rem;
+  background-color: rgba(255, 255, 255, 0.527);
+  -webkit-clip-path: polygon(50% 5%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0);
+          clip-path: polygon(50% 5%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0); }
+  @media (min-width: 860px) {
+    .music {
+      height: 60rem;
+      -webkit-clip-path: polygon(50% 20%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0);
+              clip-path: polygon(50% 20%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0); } }
+  .music__header {
+    padding-top: 15rem;
+    text-align: center; }
+    .music__header__title {
+      font-size: 3.6rem;
+      font-family: "Allerta Stencil", sans-serif;
+      font-weight: 700;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+      position: relative; }
+      .music__header__title::before, .music__header__title::after {
+        content: "";
+        position: absolute;
+        font-size: 2rem;
+        color: black;
+        background-color: rgba(190, 55, 55, 0.527);
+        width: 8rem;
+        height: 0.3rem;
+        margin-top: 2rem;
+        bottom: 0;
+        -webkit-animation: titleAnimate 0.8s ease-out;
+                animation: titleAnimate 0.8s ease-out; }
+      .music__header__title::before {
+        left: 50%; }
+      .music__header__title::after {
+        right: 50%; }
+
+@-webkit-keyframes titleAnimate {
+  from {
+    width: 0;
+    opacity: 0; }
+  to {
+    width: 8rem;
+    opacity: 1; } }
+
+@keyframes titleAnimate {
+  from {
+    width: 0;
+    opacity: 0; }
+  to {
+    width: 8rem;
+    opacity: 1; } }

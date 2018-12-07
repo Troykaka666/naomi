@@ -3,8 +3,8 @@
   color: transparent;
   background-image: linear-gradient(
     to right,
-    rgb(199, 147, 221),
-    rgb(184, 74, 93)
+    rgb(184, 65, 235),
+    rgb(255, 96, 123)
   );
   background-clip: text;
 }
@@ -12,8 +12,8 @@
   color: transparent;
   background-image: linear-gradient(
     to right,
-    rgb(220, 175, 243),
-    rgb(231, 155, 168)
+    rgb(196, 99, 241),
+    rgb(240, 81, 160)
   );
   background-clip: text;
 }
@@ -48,3 +48,7 @@
   }
 }
 
+.container-2{
+  margin: 0;
+  padding: 2rem 4rem;
+}

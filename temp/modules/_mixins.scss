@@ -33,3 +33,21 @@ ORDER: Base + typography > general layout + grid > page layout > components
     @content;
   }
 }
+
+@mixin themeScrollbar {
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: $shadow;
+    border-radius: 1rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(
+      to bottom,
+      rgb(237, 214, 248),
+      rgb(255, 164, 179)
+    );
+    border-radius: 1rem;
+  }
+}
