@@ -5,7 +5,6 @@ var gulp = require("gulp"),
   (sass = require("gulp-sass")),
   (sourcemaps = require("gulp-sourcemaps")),
   (cssmin = require("gulp-cssnano")),
-  (rename = require("gulp-rename")),
   (rename = require("gulp-rename"));
 
 var prefixerOptions = {

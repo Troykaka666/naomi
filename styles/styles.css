@@ -320,8 +320,8 @@ ORDER: Base + typography > general layout + grid > page layout > components
 */
 .lineartext-pink-dark {
   color: transparent;
-  background-image: -webkit-gradient(linear, left top, right top, from(#b841eb), to(#ff607b));
-  background-image: linear-gradient(to right, #b841eb, #ff607b);
+  background-image: -webkit-gradient(linear, left top, right top, from(#f7c3f4), to(#fa24ef));
+  background-image: linear-gradient(to right, #f7c3f4, #fa24ef);
   -webkit-background-clip: text;
           background-clip: text; }
 
@@ -336,8 +336,8 @@ ORDER: Base + typography > general layout + grid > page layout > components
   width: 0.5rem; }
 
 .customeScrollbar ::-webkit-scrollbar-track {
-  -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 5rem 3rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5rem 3rem rgba(0, 0, 0, 0.1);
   border-radius: 1rem; }
 
 .customeScrollbar ::-webkit-scrollbar-thumb {
@@ -350,13 +350,93 @@ ORDER: Base + typography > general layout + grid > page layout > components
   background-color: aquamarine;
   margin: 0;
   height: auto; }
-  @media (min-width: 860px) {
+  @media (min-width: 1010px) {
     .container-1 {
       margin: 3rem auto 0 auto; } }
 
 .container-2 {
   margin: 0;
   padding: 2rem 4rem; }
+
+.image__holder {
+  width: 100%;
+  overflow: hidden; }
+
+.image__img {
+  width: 100%;
+  position: relative; }
+
+.image__overlap {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 255, 255, 0.295); }
+
+.section__title {
+  margin-top: 0rem;
+  font-size: 3.6rem;
+  font-family: "Allerta Stencil", sans-serif;
+  font-weight: 700;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  position: relative;
+  letter-spacing: 1rem;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+  @media (min-width: 860px) {
+    .section__title {
+      margin-top: 20rem; } }
+  .section__title::before, .section__title::after {
+    content: "";
+    position: absolute;
+    font-size: 2rem;
+    color: black;
+    background-color: rgba(236, 154, 154, 0.527);
+    width: 1rem;
+    height: 0.1rem;
+    margin-top: 2rem;
+    bottom: 0;
+    opacity: 1;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; }
+  .section__title::before {
+    left: 50%; }
+  .section__title::after {
+    right: 50%; }
+  .section__title--largeFont {
+    font-size: 5rem;
+    margin: 0;
+    padding: 0; }
+  .section__title:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    text-shadow: 10px 5px 10px rgba(0, 0, 0, 0.2); }
+  .section__title:hover:before, .section__title:hover:after {
+    height: 0.3rem;
+    width: 13rem; }
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  margin-top: 5rem; }
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 *,
 *::after,
@@ -372,8 +452,8 @@ html {
   html ::-webkit-scrollbar {
     width: 0.5rem; }
   html ::-webkit-scrollbar-track {
-    -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
-            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 5rem 3rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5rem 3rem rgba(0, 0, 0, 0.1);
     border-radius: 1rem; }
   html ::-webkit-scrollbar-thumb {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#edd6f8), to(#ffa4b3));
@@ -425,8 +505,8 @@ body {
     top: 1rem;
     left: 1rem;
     z-index: 2000;
-    -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
-            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 5rem 3rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5rem 3rem rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     text-align: center;
     cursor: pointer; }
@@ -437,8 +517,8 @@ body {
   .navigation__icon {
     position: relative;
     margin-top: 1.5rem;
-    -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
-            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1); }
+    -webkit-box-shadow: 0 5rem 3rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5rem 3rem rgba(0, 0, 0, 0.1); }
     @media (min-width: 660px) {
       .navigation__icon {
         margin-top: 2.5rem; } }
@@ -545,8 +625,8 @@ body {
       .navigation__link:link, .navigation__link:visited {
         padding: 1rem 1.2rem; } }
   .navigation__link:hover, .navigation__link:active {
-    -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
-            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 5rem 3rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5rem 3rem rgba(0, 0, 0, 0.1);
     background-position: 100%;
     -webkit-transform: translateY(1rem) scale(1.1);
             transform: translateY(1rem) scale(1.1); }
@@ -665,22 +745,25 @@ body {
   width: 100%;
   height: 1000px;
   float: left;
-  background-color: rgba(252, 245, 245, 0.856);
+  background-color: rgba(124, 82, 111, 0.822);
   -webkit-transition: width 0.3 ease;
   transition: width 0.3 ease;
   margin-top: 0rem;
   overflow-y: unset;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  z-index: 999; }
   @media (min-width: 860px) {
     .box2 {
-      margin-top: 0;
+      background-color: rgba(231, 231, 231, 0.411);
+      position: absolute;
       overflow-y: scroll;
       overflow-x: hidden; } }
   @media (min-width: 1010px) {
     .box2 {
       width: 60%;
-      -webkit-box-shadow: -5px 14px 61px -2px rgba(0, 0, 0, 0.75);
-      box-shadow: -5px 14px 61px -2px rgba(0, 0, 0, 0.75); } }
+      position: relative;
+      -webkit-box-shadow: 10px 25px 50px -2px rgba(0, 0, 0, 0.75);
+      box-shadow: 10px 25px 50px -2px rgba(0, 0, 0, 0.75); } }
   @media (min-width: 860px) {
     .box2__header {
       margin-top: -5rem;
@@ -688,19 +771,23 @@ body {
   .box2__header__title {
     font-size: 10rem;
     font-weight: 500;
+    margin-top: 4rem;
     margin-bottom: 0rem; }
     @media (min-width: 860px) {
       .box2__header__title {
         font-size: 20rem;
+        margin-top: 3rem;
         margin-bottom: 5rem; } }
   .box2__header__subti {
-    font-size: 2.2rem;
+    text-align: center;
+    font-size: 3rem;
     font-weight: 300;
     margin-bottom: 0;
     padding-bottom: 0; }
     @media (min-width: 860px) {
       .box2__header__subti {
         margin-top: -15rem;
+        margin-bottom: 5rem;
         font-size: 5rem; } }
   .box2__header__quote {
     font-size: 3rem; }
@@ -709,7 +796,7 @@ body {
         font-size: 5rem; } }
   .box2__header__likeme {
     margin-top: 1rem;
-    padding-top: 5rem; }
+    padding-top: 1rem; }
   .box2__header__heart {
     position: relative;
     -webkit-transition: all 0.6s ease-in-out;
@@ -776,41 +863,16 @@ body {
     opacity: 0; } }
 
 .music {
-  height: 20rem;
-  background-color: rgba(255, 255, 255, 0.527);
+  background-color: rgba(255, 255, 255, 0.973);
   -webkit-clip-path: polygon(50% 5%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0);
           clip-path: polygon(50% 5%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0); }
   @media (min-width: 860px) {
     .music {
-      height: 60rem;
-      -webkit-clip-path: polygon(50% 20%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0);
-              clip-path: polygon(50% 20%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0); } }
+      -webkit-clip-path: polygon(50% 12%, 100% 0, 100% 100%, 0 100%, 0 0);
+              clip-path: polygon(50% 12%, 100% 0, 100% 100%, 0 100%, 0 0); } }
   .music__header {
-    padding-top: 15rem;
+    padding-top: 0rem;
     text-align: center; }
-    .music__header__title {
-      font-size: 3.6rem;
-      font-family: "Allerta Stencil", sans-serif;
-      font-weight: 700;
-      display: inline-block;
-      padding-bottom: 0.5rem;
-      position: relative; }
-      .music__header__title::before, .music__header__title::after {
-        content: "";
-        position: absolute;
-        font-size: 2rem;
-        color: black;
-        background-color: rgba(190, 55, 55, 0.527);
-        width: 8rem;
-        height: 0.3rem;
-        margin-top: 2rem;
-        bottom: 0;
-        -webkit-animation: titleAnimate 0.8s ease-out;
-                animation: titleAnimate 0.8s ease-out; }
-      .music__header__title::before {
-        left: 50%; }
-      .music__header__title::after {
-        right: 50%; }
 
 @-webkit-keyframes titleAnimate {
   from {
