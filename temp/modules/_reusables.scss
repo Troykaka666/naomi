@@ -2,9 +2,9 @@
 .lineartext-pink-dark {
   color: transparent;
   background-image: linear-gradient(
-    to right,
-    rgb(247, 195, 244),
-    rgb(250, 36, 239)
+    to bottom,
+    rgb(255, 184, 251),
+    rgb(139, 6, 172)
   );
   background-clip: text;
 }
@@ -53,32 +53,10 @@
   padding: 2rem 4rem;
 }
 
-
-//Image Holder
-.image{
-  &__holder{
-    width: 100%;
-    overflow: hidden;
-  }
-  &__img{
-    width: 100%;
-    position: relative;
-  }
-  &__overlap{
-    position: absolute;
-    top:110%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background-color: rgba(0, 255, 255, 0.295);
-  }
-}
-
 //Section Title
 .section{
   &__title{
-    margin-top: 0rem;
+    margin-top: 12rem;
     font-size: 3.6rem;
     font-family: $titleFont;
     font-weight: 700;
@@ -87,8 +65,10 @@
     position: relative;
     letter-spacing: 1rem;
     cursor: pointer;
+    text-shadow:10px 5px 10px rgba(0,0,0,0.2);
     transition: all 0.5s ease-in-out;
     @include atMedium{
+        font-size: 8rem;
         margin-top: 20rem;
     }
     &::before,&::after{
@@ -114,13 +94,12 @@
     //     width: 8rem;
     // }
     &--largeFont{
-        font-size: 5rem;
+        font-size: 10rem;
         margin: 0;
         padding: 0;
     }
     &:hover{
         transform: scale(1.2);
-        text-shadow:10px 5px 10px rgba(0,0,0,0.2);
     }
     &:hover:before,  &:hover:after{
         height: 0.3rem;
@@ -128,3 +107,28 @@
     }
   }
 }
+
+
+//Changing border color
+.boderColorChange{
+  border: 3px solid black;
+  animation: borderColorChange 5s linear infinite;
+}
+
+@keyframes borderColorChange{
+  0%{
+      border-color: aqua;
+  }
+  20%{
+      border-color: rgb(255, 0, 13);
+  }
+  40%{
+      border-color: rgb(217, 255, 0);
+  }
+  60%{
+      border-color: rgb(153, 0, 255);
+  }
+  80%{
+      border-color: rgb(88, 168, 124);
+  }
+}  

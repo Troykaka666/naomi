@@ -8,10 +8,10 @@
     background-attachment: fixed;
     position: relative;
     height: 30rem;
-    clip-path: polygon(50% 5%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0);
+    // clip-path: polygon(50% 5%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0);
     @include atMedium{
         height: 60rem;
-        clip-path: polygon(50% 20%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0);
+        // clip-path: polygon(50% 20%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0);
     }
     &__overlay{
         width: 100%;

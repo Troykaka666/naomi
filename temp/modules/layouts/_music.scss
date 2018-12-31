@@ -1,6 +1,9 @@
 .music{
     background-color: rgba(255, 255, 255, 0.973);
     clip-path: polygon(50% 5%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0);
+    background-image: url('../../../img/naomimus.jpg');
+    background-position: center;
+    background-size: cover;
     @include atMedium{
         clip-path: polygon(50% 12%, 100% 0, 100% 100%, 0 100%, 0 0);
     }
@@ -9,6 +12,59 @@
         text-align: center;
     }
 }
+
+//Image Holder
+.image{
+    &__holder{
+      width: 100%;
+      overflow: hidden; 
+      transition:  all 0.5s ease-in-out;
+    }
+    &__img{
+      width: 70%;
+      position: relative;
+      transition: all 0.5s ease-in-out;
+      @include atMedium{
+          width: 100%;
+      }
+    }
+    &__overlap{
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        width: 100%;
+        height: 0%;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+        background-color: rgba(219, 161, 216, 0.295);
+        
+    }
+    &__btn{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 6rem;
+        cursor: pointer;
+        box-shadow: $shadow-1;
+        background-color: rgba(131, 124, 130, 0.815);
+        transition: all 0.5s ease-in-out;
+    }
+    &__btn:hover{
+        font-size: 8rem;
+    }
+    &__holder:hover{
+       border: 3px solid black;
+    }
+    &__holder:hover &__overlap{
+        opacity: 1;
+        height: 100%;
+    }
+    &__holder:hover &__img{
+        filter: blur(5px);
+        transform: scale(1.2);
+    }
+  }
 
 @keyframes titleAnimate{
     from{

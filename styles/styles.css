@@ -320,8 +320,8 @@ ORDER: Base + typography > general layout + grid > page layout > components
 */
 .lineartext-pink-dark {
   color: transparent;
-  background-image: -webkit-gradient(linear, left top, right top, from(#f7c3f4), to(#fa24ef));
-  background-image: linear-gradient(to right, #f7c3f4, #fa24ef);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffb8fb), to(#8b06ac));
+  background-image: linear-gradient(to bottom, #ffb8fb, #8b06ac);
   -webkit-background-clip: text;
           background-clip: text; }
 
@@ -358,24 +358,8 @@ ORDER: Base + typography > general layout + grid > page layout > components
   margin: 0;
   padding: 2rem 4rem; }
 
-.image__holder {
-  width: 100%;
-  overflow: hidden; }
-
-.image__img {
-  width: 100%;
-  position: relative; }
-
-.image__overlap {
-  position: absolute;
-  top: 110%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 255, 255, 0.295); }
-
 .section__title {
-  margin-top: 0rem;
+  margin-top: 12rem;
   font-size: 3.6rem;
   font-family: "Allerta Stencil", sans-serif;
   font-weight: 700;
@@ -384,10 +368,12 @@ ORDER: Base + typography > general layout + grid > page layout > components
   position: relative;
   letter-spacing: 1rem;
   cursor: pointer;
+  text-shadow: 10px 5px 10px rgba(0, 0, 0, 0.2);
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out; }
   @media (min-width: 860px) {
     .section__title {
+      font-size: 8rem;
       margin-top: 20rem; } }
   .section__title::before, .section__title::after {
     content: "";
@@ -407,26 +393,56 @@ ORDER: Base + typography > general layout + grid > page layout > components
   .section__title::after {
     right: 50%; }
   .section__title--largeFont {
-    font-size: 5rem;
+    font-size: 10rem;
     margin: 0;
     padding: 0; }
   .section__title:hover {
     -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-    text-shadow: 10px 5px 10px rgba(0, 0, 0, 0.2); }
+            transform: scale(1.2); }
   .section__title:hover:before, .section__title:hover:after {
     height: 0.3rem;
     width: 13rem; }
+
+.boderColorChange {
+  border: 3px solid black;
+  -webkit-animation: borderColorChange 5s linear infinite;
+          animation: borderColorChange 5s linear infinite; }
+
+@-webkit-keyframes borderColorChange {
+  0% {
+    border-color: aqua; }
+  20% {
+    border-color: #ff000d; }
+  40% {
+    border-color: #d9ff00; }
+  60% {
+    border-color: #9900ff; }
+  80% {
+    border-color: #58a87c; } }
+
+@keyframes borderColorChange {
+  0% {
+    border-color: aqua; }
+  20% {
+    border-color: #ff000d; }
+  40% {
+    border-color: #d9ff00; }
+  60% {
+    border-color: #9900ff; }
+  80% {
+    border-color: #58a87c; } }
 
 .swiper-container {
   width: 100%;
   height: 100%;
   margin-top: 5rem; }
+  @media (min-width: 860px) {
+    .swiper-container {
+      height: 100%; } }
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -477,14 +493,10 @@ body {
   background-position: center;
   background-attachment: fixed;
   position: relative;
-  height: 30rem;
-  -webkit-clip-path: polygon(50% 5%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0);
-          clip-path: polygon(50% 5%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0); }
+  height: 30rem; }
   @media (min-width: 860px) {
     .parallax {
-      height: 60rem;
-      -webkit-clip-path: polygon(50% 20%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0);
-              clip-path: polygon(50% 20%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0); } }
+      height: 60rem; } }
   .parallax__overlay {
     width: 100%;
     height: 100%;
@@ -714,18 +726,18 @@ body {
 
 .box1 {
   width: 100%;
-  height: auto;
-  background-color: blanchedalmond;
+  height: 100vh;
+  background-color: #e7e7e7;
   float: left;
-  overflow: hidden;
+  overflow: auto;
   -webkit-transition: width 0.4s ease;
   transition: width 0.4s ease;
   position: fixed;
   z-index: -9999; }
   @media (min-width: 860px) {
     .box1 {
-      position: relative;
-      z-index: 0; } }
+      height: 100%;
+      position: relative; } }
   @media (min-width: 1010px) {
     .box1 {
       height: 1000px;
@@ -733,7 +745,7 @@ body {
 
 .carousel-item__image {
   width: 100%;
-  height: 500px; }
+  height: 100vh; }
   @media (min-width: 1010px) {
     .carousel-item__image {
       height: 1000px; } }
@@ -743,28 +755,30 @@ body {
 
 .box2 {
   width: 100%;
-  height: 1000px;
+  height: 100vh;
   float: left;
-  background-color: rgba(124, 82, 111, 0.822);
   -webkit-transition: width 0.3 ease;
   transition: width 0.3 ease;
   margin-top: 0rem;
   overflow-y: unset;
   overflow-x: hidden;
-  z-index: 999; }
+  background-color: rgba(243, 214, 214, 0.87); }
   @media (min-width: 860px) {
     .box2 {
-      background-color: rgba(231, 231, 231, 0.411);
-      position: absolute;
+      margin-top: 0;
       overflow-y: scroll;
-      overflow-x: hidden; } }
+      overflow-x: hidden;
+      z-index: 999;
+      position: absolute;
+      height: 90vh; } }
   @media (min-width: 1010px) {
     .box2 {
-      width: 60%;
       position: relative;
+      width: 60%;
       -webkit-box-shadow: 10px 25px 50px -2px rgba(0, 0, 0, 0.75);
-      box-shadow: 10px 25px 50px -2px rgba(0, 0, 0, 0.75); } }
-  @media (min-width: 860px) {
+      box-shadow: 10px 25px 50px -2px rgba(0, 0, 0, 0.75);
+      height: 1000px; } }
+  @media (min-width: 1010px) {
     .box2__header {
       margin-top: -5rem;
       padding-bottom: 1rem; } }
@@ -784,7 +798,7 @@ body {
     font-weight: 300;
     margin-bottom: 0;
     padding-bottom: 0; }
-    @media (min-width: 860px) {
+    @media (min-width: 1010px) {
       .box2__header__subti {
         margin-top: -15rem;
         margin-bottom: 5rem;
@@ -865,7 +879,10 @@ body {
 .music {
   background-color: rgba(255, 255, 255, 0.973);
   -webkit-clip-path: polygon(50% 5%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0);
-          clip-path: polygon(50% 5%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0); }
+          clip-path: polygon(50% 5%, 100% 0, 100% 100%, 50% 100%, 0 100%, 0% 0);
+  background-image: url("../../../img/naomimus.jpg");
+  background-position: center;
+  background-size: cover; }
   @media (min-width: 860px) {
     .music {
       -webkit-clip-path: polygon(50% 12%, 100% 0, 100% 100%, 0 100%, 0 0);
@@ -873,6 +890,62 @@ body {
   .music__header {
     padding-top: 0rem;
     text-align: center; }
+
+.image__holder {
+  width: 100%;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+
+.image__img {
+  width: 70%;
+  position: relative;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+  @media (min-width: 860px) {
+    .image__img {
+      width: 100%; } }
+
+.image__overlap {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background-color: rgba(219, 161, 216, 0.295); }
+
+.image__btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 6rem;
+  cursor: pointer;
+  -webkit-box-shadow: 10px 25px 50px -2px rgba(0, 0, 0, 0.75);
+          box-shadow: 10px 25px 50px -2px rgba(0, 0, 0, 0.75);
+  background-color: rgba(131, 124, 130, 0.815);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+
+.image__btn:hover {
+  font-size: 8rem; }
+
+.image__holder:hover {
+  border: 3px solid black; }
+
+.image__holder:hover .image__overlap {
+  opacity: 1;
+  height: 100%; }
+
+.image__holder:hover .image__img {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2); }
 
 @-webkit-keyframes titleAnimate {
   from {
